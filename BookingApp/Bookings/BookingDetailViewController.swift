@@ -11,7 +11,7 @@ import UIKit
 class BookingDetailViewController: UIViewController {
     
     private var booking: Booking?
-
+    
     init(booking: Booking?) {
         self.booking = booking
         super.init(nibName: nil, bundle: nil)
@@ -24,12 +24,21 @@ class BookingDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .purple
+        view.backgroundColor = .purple
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         label.center = self.view.center
         label.textColor = booking?.status.color
         label.text = booking?.user.firstName
-        self.view.addSubview(label)
+        view.addSubview(label)
+        
+        if
+            let splitController = splitViewController,
+            let navController = splitController.viewControllers.last as? UINavigationController,
+            UIDevice.current.userInterfaceIdiom != .phone {
+            navController.topViewController?.navigationItem.leftBarButtonItem = splitController.displayModeButtonItem
+        }
     }
+    
 }

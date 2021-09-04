@@ -17,10 +17,17 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        let splitController = UISplitViewController()
+        splitController.viewControllers = [
+            UINavigationController(rootViewController: BookingTableViewController()),
+            UINavigationController(rootViewController: BookingDetailViewController(booking: nil))
+        ]
+        splitController.delegate = self
+        
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
             HomeViewController(),
-            UINavigationController(rootViewController: BookingTableViewController()),
+            splitController,
             SettingViewController()
         ]
 
@@ -31,5 +38,16 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+}
 
+extension AppDelegate: UISplitViewControllerDelegate {
+    
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController
+    ) -> Bool {
+        true
+    }
+    
 }

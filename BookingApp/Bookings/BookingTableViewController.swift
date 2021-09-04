@@ -16,11 +16,15 @@ class BookingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .blue
-        self.title = "Booking"
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        if #available(iOS 13.0, *) {
+            tableView = UITableView(frame: .zero, style: .insetGrouped)
+        }
+        view.backgroundColor = .blue
+        title = "Booking"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
-        self.bookings = client.getBookings(25)
+        bookings = client.getBookings(25)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,9 +43,9 @@ class BookingTableViewController: UITableViewController {
      }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let booking = self.bookings[indexPath.row]
+        let booking = bookings[indexPath.row]
         let detailViewController = BookingDetailViewController(booking: booking)
-        self.navigationController?.pushViewController(detailViewController,
-                                                      animated: true)
+        let detailNavigationController = UINavigationController(rootViewController: detailViewController)
+        splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
     }
 }
