@@ -6,8 +6,6 @@
 //  Copyright © 2021 zenchef. All rights reserved.
 //
 
-import Foundation
-
 struct User {
     var firstName: String = "John"
     var lastName: String = "Doe"

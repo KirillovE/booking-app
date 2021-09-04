@@ -6,7 +6,6 @@
 //  Copyright © 2018 zenchef. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Booking {

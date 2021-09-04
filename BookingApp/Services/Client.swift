@@ -6,8 +6,6 @@
 //  Copyright © 2018 zenchef. All rights reserved.
 //
 
-import Foundation
-
 class Client {
     func getBookings(_ maxBooking: Int) -> [Booking] {
         // Call API GET to https://randomuser.me/api/?results=XXX to retrieve an array of User.
