@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookingDetailViewController: UIViewController {
+final class BookingDetailViewController: UIViewController {
     
     private var booking: Booking?
     

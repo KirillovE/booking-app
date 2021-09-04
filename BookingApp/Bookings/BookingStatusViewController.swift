@@ -8,9 +8,5 @@
 
 import UIKit
 
-class BookingStatusViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+final class BookingStatusViewController: UIViewController {
 }

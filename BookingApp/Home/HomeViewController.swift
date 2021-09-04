@@ -8,23 +8,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-    let label = UILabel()
+    private let label = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Home"
-        
-        let tabImage: UIImage?
-        if #available(iOS 13.0, *) {
-            tabImage = UIImage(systemName: "house.fill")
-        } else {
-            tabImage = UIImage(named: "home")
-        }
-        let tabItem = UITabBarItem(title: title, image: tabImage, selectedImage: nil)
-        tabBarItem = tabItem
+        initialSetup()
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,5 +24,18 @@ class HomeViewController: UIViewController {
         let booking = client.getBookings(25).first
         self.view.backgroundColor = booking?.status.color
     }
+    
 }
 
+private extension HomeViewController {
+    
+    func initialSetup() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tabBarItem = UITabBarItem(
+            title: "Home",
+            image: UIImage(named: "home"),
+            selectedImage: nil
+        )
+    }
+    
+}

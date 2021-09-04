@@ -10,43 +10,22 @@ import UIKit
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        let splitController = UISplitViewController()
-        splitController.viewControllers = [
-            UINavigationController(rootViewController: BookingTableViewController()),
-            UINavigationController(rootViewController: BookingDetailViewController(booking: nil))
-        ]
-        splitController.delegate = self
-        let splitImage: UIImage?
-        if #available(iOS 13.0, *) {
-            splitImage = UIImage(systemName: "book.fill")
-        } else {
-            splitImage = UIImage(named: "book")
-        }
-        let splitControllerTabItem = UITabBarItem(title: "Bookings", image: splitImage, selectedImage: nil)
-        splitController.tabBarItem = splitControllerTabItem
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [
-            HomeViewController(),
-            splitController,
-            SettingViewController()
-        ]
-
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = tabBarController
-        
+        window?.rootViewController = getConfiguredTabBarController()
         return true
     }
-
+    
 }
+
+// MARK: - UISplitViewControllerDelegate
 
 extension AppDelegate: UISplitViewControllerDelegate {
     
@@ -56,6 +35,50 @@ extension AppDelegate: UISplitViewControllerDelegate {
         onto primaryViewController: UIViewController
     ) -> Bool {
         true
+    }
+    
+}
+
+// MARK: - Configuring root controller
+
+private extension AppDelegate {
+    
+    func getConfiguredTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            getConfiguredHomeController(),
+            getConfiguredSplitController(),
+            getConfiguredSettingsController()
+        ]
+        tabBarController.selectedIndex = 0
+        return tabBarController
+    }
+    
+    func getConfiguredHomeController() -> UIViewController {
+        let homeController = HomeViewController()
+        return UINavigationController(rootViewController: homeController)
+    }
+    
+    func getConfiguredSplitController() -> UISplitViewController {
+        let splitController = UISplitViewController()
+        splitController.delegate = self
+        
+        splitController.tabBarItem = .init(
+            title: "Bookings",
+            image: UIImage(named: "book"),
+            tag: 1
+        )
+        
+        splitController.viewControllers = [
+            UINavigationController(rootViewController: BookingTableViewController()),
+            UINavigationController(rootViewController: BookingDetailViewController(booking: nil))
+        ]
+        return splitController
+    }
+    
+    func getConfiguredSettingsController() -> UIViewController {
+        let settingsController = SettingsViewController()
+        return UINavigationController(rootViewController: settingsController)
     }
     
 }

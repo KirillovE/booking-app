@@ -8,21 +8,28 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .green
-        title = "Setting"
-        
-        let tabImage: UIImage?
-        if #available(iOS 13.0, *) {
-            tabImage = UIImage(systemName: "gearshape.fill")
-        } else {
-            tabImage = UIImage(named: "settings")
-        }
-        let tabItem = UITabBarItem(title: title, image: tabImage, selectedImage: nil)
-        tabBarItem = tabItem
+        initialSetup()
     }
+    
+}
+
+// MARK: - Private methods
+
+private extension SettingsViewController {
+    
+    func initialSetup() {
+        view.backgroundColor = .green
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        tabBarItem = UITabBarItem(
+            title: "Settings",
+            image: UIImage(named: "settings"),
+            selectedImage: nil
+        )
+    }
+    
 }

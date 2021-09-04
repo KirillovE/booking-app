@@ -8,39 +8,39 @@
 
 import UIKit
 
-class BookingTableViewController: UITableViewController {
+final class BookingTableViewController: UITableViewController {
     
-    var bookings: [Booking] = []
-    var client = Client()
+    private var bookings: [Booking] = []
+    private var client = Client()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if #available(iOS 13.0, *) {
-            tableView = UITableView(frame: .zero, style: .insetGrouped)
-        }
-        view.backgroundColor = .blue
-        title = "Booking"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        
+        initialSetup()
         bookings = client.getBookings(25)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension BookingTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookings.count
+        bookings.count
     }
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let booking = self.bookings[indexPath.row]
         cell.textLabel?.text = booking.user.firstName
         return cell
-     }
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+
+extension BookingTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let booking = bookings[indexPath.row]
@@ -48,4 +48,19 @@ class BookingTableViewController: UITableViewController {
         let detailNavigationController = UINavigationController(rootViewController: detailViewController)
         splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
     }
+    
+}
+
+private extension BookingTableViewController {
+    
+    func initialSetup() {
+        if #available(iOS 13.0, *) {
+            tableView = UITableView(frame: .zero, style: .insetGrouped)
+        }
+        view.backgroundColor = .blue
+        title = "Booking"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+    }
+    
 }
