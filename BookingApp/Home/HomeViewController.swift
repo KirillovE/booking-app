@@ -32,11 +32,6 @@ private extension HomeViewController {
     func initialSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Home"
-        tabBarItem = UITabBarItem(
-            title: title,
-            image: UIImage(named: "home"),
-            selectedImage: nil
-        )
     }
     
 }

@@ -25,11 +25,6 @@ private extension SettingsViewController {
         view.backgroundColor = .green
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Settings"
-        tabBarItem = UITabBarItem(
-            title: title,
-            image: UIImage(named: "settings"),
-            selectedImage: nil
-        )
     }
     
 }
