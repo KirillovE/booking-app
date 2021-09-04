@@ -23,6 +23,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationController(rootViewController: BookingDetailViewController(booking: nil))
         ]
         splitController.delegate = self
+        let splitImage: UIImage?
+        if #available(iOS 13.0, *) {
+            splitImage = UIImage(systemName: "book.fill")
+        } else {
+            splitImage = UIImage(named: "book")
+        }
+        let splitControllerTabItem = UITabBarItem(title: "Bookings", image: splitImage, selectedImage: nil)
+        splitController.tabBarItem = splitControllerTabItem
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [

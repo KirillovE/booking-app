@@ -15,7 +15,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Home"
+        title = "Home"
+        
+        let tabImage: UIImage?
+        if #available(iOS 13.0, *) {
+            tabImage = UIImage(systemName: "house.fill")
+        } else {
+            tabImage = UIImage(named: "home")
+        }
+        let tabItem = UITabBarItem(title: title, image: tabImage, selectedImage: nil)
+        tabBarItem = tabItem
     }
     
     override func viewDidLayoutSubviews() {

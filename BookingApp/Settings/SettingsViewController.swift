@@ -13,7 +13,16 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .green
-        self.title = "Setting"
+        view.backgroundColor = .green
+        title = "Setting"
+        
+        let tabImage: UIImage?
+        if #available(iOS 13.0, *) {
+            tabImage = UIImage(systemName: "gearshape.fill")
+        } else {
+            tabImage = UIImage(named: "settings")
+        }
+        let tabItem = UITabBarItem(title: title, image: tabImage, selectedImage: nil)
+        tabBarItem = tabItem
     }
 }
