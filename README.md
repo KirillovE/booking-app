@@ -1,3 +1,8 @@
+![Zenchef](https://user-images.githubusercontent.com/34598314/132089480-0f97e3b0-fb0b-435a-a7ff-42f82844d446.png)
+# Booking app
+A simple booking app to show some of my skills. It should allow me get a job at Zenchef
+
+## Task
 ### Rules
 1. Do not use dependencies (pods, spm...)
 2. Do not use storyboard
