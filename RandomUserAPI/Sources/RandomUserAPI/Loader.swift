@@ -7,11 +7,14 @@
 
 import Foundation
 
-struct Loader {
-    
-    typealias UsersResponse = (Result<[User], TextualError>) -> ()
+public struct Loader {
     private let endpoint = "https://randomuser.me/api/"
     private let networkHandler = NetworkHandler()
+}
+
+public extension Loader {
+    
+    typealias UsersResponse = (Result<[User], TextualError>) -> ()
     
     func loadUsers(usersCount: Int, completion: @escaping UsersResponse) {
         guard let url = formURL(usersCount: usersCount) else {
