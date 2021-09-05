@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A07D7F326E4F1BC00E3F0BE /* ErrorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */; };
+		7A07D7F626E517AC00E3F0BE /* PlistHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 7A07D7F526E517AC00E3F0BE /* PlistHandler */; };
 		7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */; };
 		7A27E81026E4ECF60051E187 /* BookingListRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */; };
 		7A27E81426E4EDD00051E187 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E81326E4EDD00051E187 /* Status.swift */; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A07D7F626E517AC00E3F0BE /* PlistHandler in Frameworks */,
 				7A27E81A26E4F0350051E187 /* RandomUserAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +253,7 @@
 			name = BookingApp;
 			packageProductDependencies = (
 				7A27E81926E4F0350051E187 /* RandomUserAPI */,
+				7A07D7F526E517AC00E3F0BE /* PlistHandler */,
 			);
 			productName = BookingApp;
 			productReference = 7A8BFF0F212C6CBD002D27B0 /* BookingApp.app */;
@@ -706,6 +709,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7A07D7F526E517AC00E3F0BE /* PlistHandler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlistHandler;
+		};
 		7A27E81926E4F0350051E187 /* RandomUserAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RandomUserAPI;
