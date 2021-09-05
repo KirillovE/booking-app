@@ -50,6 +50,7 @@ extension BookingTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let booking = self.bookings[indexPath.row]
         cell.textLabel?.text = "\(booking.user.shortName) — \(booking.status)"
+        cell.backgroundColor = booking.status.color
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -105,7 +106,6 @@ extension BookingTableViewController: ErrorRepresenter {
 private extension BookingTableViewController {
     
     func initialSetup() {
-        view.backgroundColor = .blue
         title = "Booking"
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")

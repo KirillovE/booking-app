@@ -23,15 +23,25 @@ final class BookingDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .purple
+        initialSetup()
+    }
+    
+}
+
+// MARK: - Private methods
+
+private extension BookingDetailViewController {
+    
+    func initialSetup() {
+        title = "Booking"
         navigationController?.navigationBar.prefersLargeTitles = true
+        setLabel()
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        label.center = self.view.center
-        label.textColor = booking?.status.color
-        label.text = booking?.user.firstName
-        view.addSubview(label)
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
         
         if
             let splitController = splitViewController,
@@ -39,6 +49,14 @@ final class BookingDetailViewController: UIViewController {
             UIDevice.current.userInterfaceIdiom != .phone {
             navController.topViewController?.navigationItem.leftBarButtonItem = splitController.displayModeButtonItem
         }
+    }
+    
+    func setLabel() {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        label.center = view.center
+        label.textColor = booking?.status.color
+        label.text = booking?.user.firstName ?? "Pick a booking"
+        view.addSubview(label)
     }
     
 }

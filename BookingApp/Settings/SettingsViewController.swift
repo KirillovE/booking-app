@@ -22,9 +22,14 @@ final class SettingsViewController: UIViewController {
 private extension SettingsViewController {
     
     func initialSetup() {
-        view.backgroundColor = .green
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Settings"
+        
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
     }
     
 }
