@@ -51,7 +51,7 @@ struct NetworkHandler {
         }
     }
     
-    private func decodeLoadedData<T: Decodable>(
+    func decodeLoadedData<T: Decodable>(
         _ data: Data,
         ofType type: T.Type
     ) -> Result<T, TextualError> {
