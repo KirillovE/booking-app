@@ -68,6 +68,7 @@ private extension BookingDetailViewController {
     
     @objc func editBooking() {
         let statusController = BookingStatusViewController()
+        statusController.booking = booking
         present(statusController, animated: true)
     }
     

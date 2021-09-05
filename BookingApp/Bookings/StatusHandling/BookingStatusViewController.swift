@@ -9,24 +9,26 @@
 import UIKit
 
 final class BookingStatusViewController: UIViewController {
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var statusPicker: UIPickerView!
+    @IBOutlet private weak var detailsLabel: UILabel!
+    @IBOutlet private weak var statusPicker: UIPickerView!
     
-    private var booking: Booking? {
-        didSet {
-            guard
-                let booking = booking,
-                let selectedIndex = Status.allCases.firstIndex(of: booking.status)
-            else { return }
-            detailsLabel.text = String(describing: booking.user)
-            statusPicker.selectRow(selectedIndex, inComponent: 0, animated: false)
-        }
-    }
+    var booking: Booking?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialSetup()
+    }
+    
+    private func initialSetup() {
         statusPicker.delegate = self
         statusPicker.dataSource = self
+        
+        guard
+            let booking = booking,
+            let selectedIndex = Status.allCases.firstIndex(of: booking.status)
+        else { return }
+        detailsLabel.text = String(describing: booking.user)
+        statusPicker.selectRow(selectedIndex, inComponent: 0, animated: false)
     }
 }
 
