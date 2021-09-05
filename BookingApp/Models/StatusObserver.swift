@@ -7,7 +7,5 @@
 //
 
 protocol StatusObserver: AnyObject {
-    
     func handleNewStatus(_ newStatus: Status)
-
 }

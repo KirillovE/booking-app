@@ -29,22 +29,6 @@ struct User {
 }
 
 extension User {
-    
-    enum Gender: String {
-        case male, female
-    }
-
-}
-
-extension User.Gender: CustomStringConvertible {
-    
-    var description: String {
-        NSLocalizedString(rawValue, comment: "")
-    }
-    
-}
-
-extension User {
 
     init(fromAPI user: RandomUserAPI.User) {
         title = user.name.title
@@ -72,6 +56,24 @@ extension User: CustomStringConvertible {
             \(NSLocalizedString("phone number", comment: "")): \(phone)
             \(NSLocalizedString("age", comment: "")): \(age)
         """
+    }
+    
+}
+
+// MARK: - Gender
+
+extension User {
+    
+    enum Gender: String {
+        case male, female
+    }
+    
+}
+
+extension User.Gender: CustomStringConvertible {
+    
+    var description: String {
+        NSLocalizedString(rawValue, comment: "")
     }
     
 }

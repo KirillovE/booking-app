@@ -21,6 +21,8 @@ final class HomeViewController: UIViewController {
     
 }
 
+// MARK: - Private methods
+
 private extension HomeViewController {
     
     func initialSetup() {

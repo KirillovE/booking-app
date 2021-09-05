@@ -14,9 +14,7 @@ struct BookingListInteractor {
     
     weak var bookingsRepresenter: BookingListRepresenter?
     weak var errorRepresenter: ErrorRepresenter?
-    
     private let userLoader = Loader()
-    private let notificationsCenter = NotificationCenter.default
     
     private let bookingsCount: Int = {
         PlistHandler(plistName: "Info").getValueForKey("BookingsCount", using: .main) ?? 0
@@ -39,7 +37,7 @@ struct BookingListInteractor {
     private func updateTopStatus(_ newStatus: Status?) {
         newStatus.map { status in
             let info = ["topStatus": status]
-            notificationsCenter.post(
+            NotificationCenter.default.post(
                 name: NotificationName.bookingsUpdated.name,
                 object: nil,
                 userInfo: info

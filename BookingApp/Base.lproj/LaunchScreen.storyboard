@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bookings-->
+        <!-- -->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bookings" image="book" id="FcA-wt-wUx"/>
+                    <tabBarItem key="tabBarItem" title=" " image="book" id="FcA-wt-wUx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1770" y="375"/>
         </scene>
-        <!--Home-->
+        <!-- -->
         <scene sceneID="pop-2x-KBt">
             <objects>
                 <viewController id="qxu-74-Jf7" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="O8M-TR-1uT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="ea0-gb-5aN"/>
+                    <tabBarItem key="tabBarItem" title=" " image="home" id="ea0-gb-5aN"/>
                     <navigationItem key="navigationItem" id="zi6-oN-a9B"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2SS-Ee-kIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
-        <!--Settings-->
+        <!-- -->
         <scene sceneID="jOR-8O-dE1">
             <objects>
                 <viewController id="jVC-1c-5xe" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                         <viewLayoutGuide key="safeArea" id="6uE-yl-gK9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="bAL-AW-1Cn"/>
+                    <tabBarItem key="tabBarItem" title=" " image="settings" id="bAL-AW-1Cn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGX-gy-fy6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
