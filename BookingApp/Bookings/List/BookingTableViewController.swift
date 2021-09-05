@@ -11,12 +11,10 @@ import UIKit
 final class BookingTableViewController: UITableViewController {
     
     private var bookings: [Booking] = []
-    private var client = Client()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-        bookings = client.getBookings(25)
     }
     
 }

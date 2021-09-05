@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */; };
+		7A27E81026E4ECF60051E187 /* BookingListRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */; };
+		7A27E81426E4EDD00051E187 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E81326E4EDD00051E187 /* Status.swift */; };
 		7A8BFF13212C6CBD002D27B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF12212C6CBD002D27B0 /* AppDelegate.swift */; };
 		7A8BFF15212C6CBD002D27B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF14212C6CBD002D27B0 /* HomeViewController.swift */; };
 		7A8BFF1A212C6CBF002D27B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8BFF19212C6CBF002D27B0 /* Assets.xcassets */; };
@@ -16,7 +19,6 @@
 		7A8BFF44212C6E7E002D27B0 /* BookingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF43212C6E7E002D27B0 /* BookingTableViewController.swift */; };
 		7A8BFF46212C6E97002D27B0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF45212C6E97002D27B0 /* SettingsViewController.swift */; };
 		7A8BFF4A212C756D002D27B0 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF49212C756D002D27B0 /* Booking.swift */; };
-		7A8BFF4C212C75F8002D27B0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF4B212C75F8002D27B0 /* Client.swift */; };
 		7A8BFF4E212C77F0002D27B0 /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF4D212C77F0002D27B0 /* BookingDetailViewController.swift */; };
 		7A8BFF51212C7ADC002D27B0 /* BookingStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF4F212C7ADC002D27B0 /* BookingStatusViewController.swift */; };
 		7A8BFF52212C7ADC002D27B0 /* BookingStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8BFF50212C7ADC002D27B0 /* BookingStatusViewController.xib */; };
@@ -42,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		7A27E80B26E4D08B0051E187 /* RandomUserAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RandomUserAPI; sourceTree = "<group>"; };
+		7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListInteractor.swift; sourceTree = "<group>"; };
+		7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListRepresenter.swift; sourceTree = "<group>"; };
+		7A27E81326E4EDD00051E187 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7A8BFF0F212C6CBD002D27B0 /* BookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8BFF12212C6CBD002D27B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A8BFF14212C6CBD002D27B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +62,6 @@
 		7A8BFF43212C6E7E002D27B0 /* BookingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTableViewController.swift; sourceTree = "<group>"; };
 		7A8BFF45212C6E97002D27B0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7A8BFF49212C756D002D27B0 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
-		7A8BFF4B212C75F8002D27B0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		7A8BFF4D212C77F0002D27B0 /* BookingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
 		7A8BFF4F212C7ADC002D27B0 /* BookingStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingStatusViewController.swift; sourceTree = "<group>"; };
 		7A8BFF50212C7ADC002D27B0 /* BookingStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingStatusViewController.xib; sourceTree = "<group>"; };
@@ -89,6 +93,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A27E80C26E4ECAA0051E187 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7A8BFF43212C6E7E002D27B0 /* BookingTableViewController.swift */,
+				7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */,
+				7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7A27E81126E4ED800051E187 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7A8BFF4D212C77F0002D27B0 /* BookingDetailViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7A27E81226E4ED8A0051E187 /* StatusHandling */ = {
+			isa = PBXGroup;
+			children = (
+				7A8BFF4F212C7ADC002D27B0 /* BookingStatusViewController.swift */,
+				7A8BFF50212C7ADC002D27B0 /* BookingStatusViewController.xib */,
+			);
+			path = StatusHandling;
+			sourceTree = "<group>";
+		};
+		7A27E81526E4EE2A0051E187 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A8BFF49212C756D002D27B0 /* Booking.swift */,
+				7A95E9262640244400A3E824 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7A8BFF06212C6CBD002D27B0 = {
 			isa = PBXGroup;
 			children = (
@@ -113,11 +153,10 @@
 		7A8BFF11212C6CBD002D27B0 /* BookingApp */ = {
 			isa = PBXGroup;
 			children = (
-				7A8BFF48212C755E002D27B0 /* Models */,
-				7A8BFF47212C7556002D27B0 /* Services */,
 				7A8BFF42212C6CFB002D27B0 /* Home */,
 				7A8BFF41212C6CF5002D27B0 /* Bookings */,
 				7A8BFF40212C6CEF002D27B0 /* Settings */,
+				7A8BFF48212C755E002D27B0 /* Models */,
 				7A8BFF12212C6CBD002D27B0 /* AppDelegate.swift */,
 				7A8BFF19212C6CBF002D27B0 /* Assets.xcassets */,
 				7A8BFF1B212C6CBF002D27B0 /* LaunchScreen.storyboard */,
@@ -155,10 +194,10 @@
 		7A8BFF41212C6CF5002D27B0 /* Bookings */ = {
 			isa = PBXGroup;
 			children = (
-				7A8BFF43212C6E7E002D27B0 /* BookingTableViewController.swift */,
-				7A8BFF4D212C77F0002D27B0 /* BookingDetailViewController.swift */,
-				7A8BFF4F212C7ADC002D27B0 /* BookingStatusViewController.swift */,
-				7A8BFF50212C7ADC002D27B0 /* BookingStatusViewController.xib */,
+				7A27E81526E4EE2A0051E187 /* Models */,
+				7A27E80C26E4ECAA0051E187 /* List */,
+				7A27E81126E4ED800051E187 /* Details */,
+				7A27E81226E4ED8A0051E187 /* StatusHandling */,
 			);
 			path = Bookings;
 			sourceTree = "<group>";
@@ -171,19 +210,10 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		7A8BFF47212C7556002D27B0 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				7A8BFF4B212C75F8002D27B0 /* Client.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		7A8BFF48212C755E002D27B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7A8BFF49212C756D002D27B0 /* Booking.swift */,
-				7A95E9262640244400A3E824 /* User.swift */,
+				7A27E81326E4EDD00051E187 /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,10 +356,12 @@
 				7A8BFF4E212C77F0002D27B0 /* BookingDetailViewController.swift in Sources */,
 				7A8BFF15212C6CBD002D27B0 /* HomeViewController.swift in Sources */,
 				7A8BFF13212C6CBD002D27B0 /* AppDelegate.swift in Sources */,
-				7A8BFF4C212C75F8002D27B0 /* Client.swift in Sources */,
+				7A27E81026E4ECF60051E187 /* BookingListRepresenter.swift in Sources */,
 				7A95E9272640244400A3E824 /* User.swift in Sources */,
 				7A8BFF44212C6E7E002D27B0 /* BookingTableViewController.swift in Sources */,
 				7A8BFF46212C6E97002D27B0 /* SettingsViewController.swift in Sources */,
+				7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */,
+				7A27E81426E4EDD00051E187 /* Status.swift in Sources */,
 				7A8BFF4A212C756D002D27B0 /* Booking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,14 +17,6 @@ final class HomeViewController: UIViewController {
         initialSetup()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let client = Client()
-        let booking = client.getBookings(25).first
-        self.view.backgroundColor = booking?.status.color
-    }
-    
 }
 
 private extension HomeViewController {
