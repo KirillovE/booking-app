@@ -8,7 +8,7 @@
 import Foundation
 
 enum APIResponses {
-    case results, user, gender, fullName, dob
+    case results, user, genderMale, genderFemale, fullName, dob
     
     var data: Data? {
         response.data(using: .utf8)
@@ -23,8 +23,10 @@ private extension APIResponses {
             return resultsResponse
         case .user:
             return userResponse
-        case .gender:
-            return genderResponse
+        case .genderMale:
+            return genderMaleResponse
+        case .genderFemale:
+            return genderFemaleResponse
         case .fullName:
             return fullNameRsponse
         case .dob:
@@ -76,11 +78,15 @@ private extension APIResponses {
         """
     }
     
-    var genderResponse: String {
+    var genderMaleResponse: String {
         """
-        {
-            "gender": "male"
-        }
+        "male"
+        """
+    }
+    
+    var genderFemaleResponse: String {
+        """
+        "female"
         """
     }
     
