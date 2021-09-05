@@ -48,8 +48,7 @@ extension BookingDetailViewController: StatusObserver {
 private extension BookingDetailViewController {
     
     func initialSetup() {
-        title = "Booking"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        setNavigationItems()
         setLabelView()
         setLabelText()
         
@@ -58,6 +57,19 @@ private extension BookingDetailViewController {
         } else {
             view.backgroundColor = .white
         }
+    }
+    
+    func setNavigationItems() {
+        navigationItem.title = "Booking"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        if booking != nil {
+            navigationItem.rightBarButtonItem = .init(
+                barButtonSystemItem: .edit,
+                target: self,
+                action: #selector(editBooking)
+            )
+        }
         
         if
             let splitController = splitViewController,
@@ -65,12 +77,6 @@ private extension BookingDetailViewController {
             UIDevice.current.userInterfaceIdiom != .phone {
             navController.topViewController?.navigationItem.leftBarButtonItem = splitController.displayModeButtonItem
         }
-        
-        navigationController?.navigationItem.rightBarButtonItem = .init(
-            barButtonSystemItem: .edit,
-            target: self,
-            action: #selector(editBooking)
-        )
     }
     
     func setLabelView() {
