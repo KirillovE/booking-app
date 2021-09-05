@@ -46,7 +46,7 @@ extension BookingTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let booking = self.bookings[indexPath.row]
-        cell.textLabel?.text = booking.user.firstName
+        cell.textLabel?.text = "\(booking.user.shortName) — \(booking.status)"
         return cell
     }
     
@@ -70,7 +70,10 @@ extension BookingTableViewController {
 extension BookingTableViewController: BookingListRepresenter {
     
     func representBookings(_ bookings: [Booking]) {
-        print(bookings)
+        self.bookings = bookings
+        DispatchQueue.main.async {
+            self.tableView.reloadSections([0], with: .automatic)
+        }
     }
     
 }

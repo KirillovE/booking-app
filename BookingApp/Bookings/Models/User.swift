@@ -9,13 +9,22 @@
 import RandomUserAPI
 
 struct User {
+    let title: String
     let firstName: String
     let lastName: String
-    let fullName: String
     let gender: Gender
     let email: String
     let phone: String
     let age: Int
+    
+    var fullName: String {
+        "\(title) \(firstName) \(lastName)"
+    }
+    
+    var shortName: String {
+        let firstNameLetter = firstName.first.map { "\($0). " } ?? ""
+        return "\(title) \(firstNameLetter)\(lastName)"
+    }
 }
 
 extension User {
@@ -29,12 +38,12 @@ extension User {
 extension User {
 
     init(fromAPI user: RandomUserAPI.User) {
+        title = user.name.title
         firstName = user.name.first
         lastName = user.name.last
-        fullName = "\(user.name.title) \(user.name.first) \(user.name.last)"
         email = user.email
         phone = user.phone
-        age = 1//user.age
+        age = user.age
         gender = user.gender == .male
             ? .male
             : .female

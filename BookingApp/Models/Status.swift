@@ -8,7 +8,7 @@
 
 import UIKit.UIColor
 
-enum Status {
+enum Status: String {
     case waiting
     case canceled
     case confirmed
