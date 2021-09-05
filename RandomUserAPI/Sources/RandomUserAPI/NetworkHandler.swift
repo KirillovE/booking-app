@@ -19,7 +19,7 @@ struct NetworkHandler {
     func loadDataFromURL<T: Decodable>(
         _ url: URL,
         withType type: T.Type,
-        completion: @escaping (Result<T, TextualError>) -> Void
+        completion: @escaping (Result<T, TextualError>) -> ()
     ) -> URLSessionDataTask {
         session.dataTask(with: url) { data, response, error in
             if let error = error {

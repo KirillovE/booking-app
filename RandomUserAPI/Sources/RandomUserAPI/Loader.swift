@@ -9,11 +9,23 @@ import Foundation
 
 struct Loader {
     
+    typealias UsersResponse = (Result<[User], TextualError>) -> ()
     private let endpoint = "https://randomuser.me/api/"
+    private let networkHandler = NetworkHandler()
     
-    func loadUsers(usersCount: Int) {
+    func loadUsers(usersCount: Int, completion: @escaping UsersResponse) {
+        guard let url = formURL(usersCount: usersCount) else {
+            completion(.failure("Failed to form request"))
+            return
+        }
         
+        let task = networkHandler.loadDataFromURL(url, withType: Results.self) { resultsResponse in
+            let usersResponse = resultsResponse.map(\.users)
+            completion(usersResponse)
+        }
+        task.resume()
     }
+    
 }
 
 extension Loader {
