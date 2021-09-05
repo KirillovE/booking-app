@@ -53,7 +53,6 @@
 		7A07D7F426E50FEF00E3F0BE /* PlistHandler */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PlistHandler; sourceTree = "<group>"; };
 		7A07D7F926E51DF400E3F0BE /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		7A07D81B26E5386C00E3F0BE /* StatusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusObserver.swift; sourceTree = "<group>"; };
-		7A07D81D26E5480A00E3F0BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7A07D82326E54A5F00E3F0BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A07D82526E54A6400E3F0BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A27E80B26E4D08B0051E187 /* RandomUserAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RandomUserAPI; sourceTree = "<group>"; };
@@ -448,7 +447,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7A8BFF1C212C6CBF002D27B0 /* Base */,
-				7A07D81D26E5480A00E3F0BE /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
