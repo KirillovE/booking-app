@@ -8,6 +8,7 @@
 
 import RandomUserAPI
 import PlistHandler
+import Foundation.NSNotification
 
 struct BookingListInteractor {
     
@@ -15,6 +16,7 @@ struct BookingListInteractor {
     weak var errorRepresenter: ErrorRepresenter?
     
     private let userLoader = Loader()
+    private let notificationsCenter = NotificationCenter.default
     
     private let bookingsCount: Int = {
         PlistHandler(plistName: "Info").getValueForKey("BookingsCount", using: .main) ?? 0
@@ -27,9 +29,21 @@ struct BookingListInteractor {
                 let users = loadedUsers.map(User.init)
                 let bookings = users.map { Booking(user: $0) }
                 bookingsRepresenter?.representBookings(bookings)
+                updateTopStatus(bookings.first?.status)
             case .failure(let error):
                 errorRepresenter?.representErrorText(error.localizedDescription)
             }
+        }
+    }
+    
+    private func updateTopStatus(_ newStatus: Status?) {
+        newStatus.map { status in
+            let info = ["topStatus": status]
+            notificationsCenter.post(
+                name: NotificationName.bookingsUpdated.name,
+                object: nil,
+                userInfo: info
+            )
         }
     }
     

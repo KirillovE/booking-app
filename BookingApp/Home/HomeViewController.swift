@@ -9,12 +9,14 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-
+    
     private let label = UILabel()
+    private let notificationsCenter = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        observeNotifications()
     }
     
 }
@@ -28,6 +30,26 @@ private extension HomeViewController {
             view.backgroundColor = .systemBackground
         } else {
             view.backgroundColor = .white
+        }
+    }
+    
+    func observeNotifications() {
+        notificationsCenter.addObserver(
+            self,
+            selector: #selector(updateColor),
+            name: NotificationName.bookingsUpdated.name,
+            object: nil
+        )
+    }
+    
+    @objc func updateColor(using notification: Notification) {
+        guard
+            let info = notification.userInfo as? [String: Status],
+            let status = info["topStatus"]
+        else { return }
+        
+        DispatchQueue.main.async {
+            self.view.backgroundColor = status.color
         }
     }
     

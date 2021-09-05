@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A07D7F326E4F1BC00E3F0BE /* ErrorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */; };
 		7A07D7F826E518D200E3F0BE /* PlistHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 7A07D7F726E518D200E3F0BE /* PlistHandler */; };
+		7A07D7FA26E51DF400E3F0BE /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D7F926E51DF400E3F0BE /* NotificationName.swift */; };
 		7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */; };
 		7A27E81026E4ECF60051E187 /* BookingListRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */; };
 		7A27E81426E4EDD00051E187 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E81326E4EDD00051E187 /* Status.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRepresenter.swift; sourceTree = "<group>"; };
 		7A07D7F426E50FEF00E3F0BE /* PlistHandler */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PlistHandler; sourceTree = "<group>"; };
+		7A07D7F926E51DF400E3F0BE /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		7A27E80B26E4D08B0051E187 /* RandomUserAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RandomUserAPI; sourceTree = "<group>"; };
 		7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListInteractor.swift; sourceTree = "<group>"; };
 		7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListRepresenter.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				7A27E81326E4EDD00051E187 /* Status.swift */,
 				7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */,
+				7A07D7F926E51DF400E3F0BE /* NotificationName.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				7A8BFF44212C6E7E002D27B0 /* BookingTableViewController.swift in Sources */,
 				7A8BFF46212C6E97002D27B0 /* SettingsViewController.swift in Sources */,
 				7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */,
+				7A07D7FA26E51DF400E3F0BE /* NotificationName.swift in Sources */,
 				7A27E81426E4EDD00051E187 /* Status.swift in Sources */,
 				7A07D7F326E4F1BC00E3F0BE /* ErrorRepresenter.swift in Sources */,
 				7A8BFF4A212C756D002D27B0 /* Booking.swift in Sources */,
