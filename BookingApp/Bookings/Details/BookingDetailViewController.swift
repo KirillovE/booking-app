@@ -10,8 +10,12 @@ import UIKit
 
 final class BookingDetailViewController: UIViewController {
     
-    private var booking: Booking?
     private var bookingTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+    private var booking: Booking? {
+        didSet {
+            setLabelText()
+        }
+    }
     
     init(booking: Booking?) {
         self.booking = booking
@@ -29,6 +33,16 @@ final class BookingDetailViewController: UIViewController {
     
 }
 
+// MARK: - StatusObserver
+
+extension BookingDetailViewController: StatusObserver {
+    
+    func handleNewStatus(_ newStatus: Status) {
+        booking?.status = newStatus
+    }
+    
+}
+
 // MARK: - Private methods
 
 private extension BookingDetailViewController {
@@ -36,7 +50,8 @@ private extension BookingDetailViewController {
     func initialSetup() {
         title = "Booking"
         navigationController?.navigationBar.prefersLargeTitles = true
-        setLabel()
+        setLabelView()
+        setLabelText()
         
         if #available(iOS 13.0, *) {
             view.backgroundColor = .systemBackground
@@ -58,18 +73,23 @@ private extension BookingDetailViewController {
         )
     }
     
-    func setLabel() {
+    func setLabelView() {
         bookingTextLabel.numberOfLines = 0
         bookingTextLabel.center = view.center
+        view.addSubview(bookingTextLabel)
+    }
+    
+    func setLabelText() {
         bookingTextLabel.textColor = booking?.status.color
         bookingTextLabel.text = booking.map(String.init) ?? "Pick a booking"
-        view.addSubview(bookingTextLabel)
     }
     
     @objc func editBooking() {
         let statusController = BookingStatusViewController()
         statusController.booking = booking
-        present(statusController, animated: true)
+        statusController.statusObserver = self
+        let navigationController = UINavigationController(rootViewController: statusController)
+        present(navigationController, animated: true)
     }
     
 }

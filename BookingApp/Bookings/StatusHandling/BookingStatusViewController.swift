@@ -13,12 +13,15 @@ final class BookingStatusViewController: UIViewController {
     @IBOutlet private weak var statusPicker: UIPickerView!
     
     var booking: Booking?
+    var statusObserver: StatusObserver?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
     }
 }
+
+// MARK: - UIPickerViewDelegate
 
 extension BookingStatusViewController: UIPickerViewDelegate {
     
@@ -35,9 +38,11 @@ extension BookingStatusViewController: UIPickerViewDelegate {
         didSelectRow row: Int,
         inComponent component: Int
     ) {
-        print("row \(row) selected, status is: \(Status.allCases[row])")
+        booking?.status = Status.allCases[row]
     }
 }
+
+// MARK: - UIPickerViewDataSource
 
 extension BookingStatusViewController: UIPickerViewDataSource {
     
@@ -51,18 +56,54 @@ extension BookingStatusViewController: UIPickerViewDataSource {
     
 }
 
+// MARK: - Private methods
+
 private extension BookingStatusViewController {
     
     func initialSetup() {
+        setDelegates()
+        setInitialvalues()
+        setNavigationItems()
+    }
+    
+    func setDelegates() {
         statusPicker.delegate = self
         statusPicker.dataSource = self
-        
+    }
+    
+    func setInitialvalues() {
         guard
             let booking = booking,
             let selectedIndex = Status.allCases.firstIndex(of: booking.status)
         else { return }
         detailsLabel.text = String(describing: booking.user)
         statusPicker.selectRow(selectedIndex, inComponent: 0, animated: false)
+    }
+    
+    func setNavigationItems() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .cancel,
+            target: self,
+            action: #selector(closeController)
+        )
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .save,
+            target: self,
+            action: #selector(saveAndClose)
+        )
+        
+        navigationItem.title = "Change status"
+    }
+    
+    @objc func closeController() {
+        dismiss(animated: true)
+    }
+    
+    @objc func saveAndClose() {
+        defer { dismiss(animated: true) }
+        guard let newStatus = booking?.status else { return }
+        statusObserver?.handleNewStatus(newStatus)
     }
     
 }
