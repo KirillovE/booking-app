@@ -18,18 +18,6 @@ final class BookingStatusViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
     }
-    
-    private func initialSetup() {
-        statusPicker.delegate = self
-        statusPicker.dataSource = self
-        
-        guard
-            let booking = booking,
-            let selectedIndex = Status.allCases.firstIndex(of: booking.status)
-        else { return }
-        detailsLabel.text = String(describing: booking.user)
-        statusPicker.selectRow(selectedIndex, inComponent: 0, animated: false)
-    }
 }
 
 extension BookingStatusViewController: UIPickerViewDelegate {
@@ -59,6 +47,22 @@ extension BookingStatusViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         Status.allCases.count
+    }
+    
+}
+
+private extension BookingStatusViewController {
+    
+    func initialSetup() {
+        statusPicker.delegate = self
+        statusPicker.dataSource = self
+        
+        guard
+            let booking = booking,
+            let selectedIndex = Status.allCases.firstIndex(of: booking.status)
+        else { return }
+        detailsLabel.text = String(describing: booking.user)
+        statusPicker.selectRow(selectedIndex, inComponent: 0, animated: false)
     }
     
 }
