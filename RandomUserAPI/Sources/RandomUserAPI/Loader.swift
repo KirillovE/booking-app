@@ -10,6 +10,8 @@ import Foundation
 public struct Loader {
     private let endpoint = "https://randomuser.me/api/"
     private let networkHandler = NetworkHandler()
+    
+    public init() { }
 }
 
 public extension Loader {
