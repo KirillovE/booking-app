@@ -50,6 +50,12 @@ private extension BookingDetailViewController {
             UIDevice.current.userInterfaceIdiom != .phone {
             navController.topViewController?.navigationItem.leftBarButtonItem = splitController.displayModeButtonItem
         }
+        
+        navigationController?.navigationItem.rightBarButtonItem = .init(
+            barButtonSystemItem: .edit,
+            target: self,
+            action: #selector(editBooking)
+        )
     }
     
     func setLabel() {
@@ -58,6 +64,11 @@ private extension BookingDetailViewController {
         bookingTextLabel.textColor = booking?.status.color
         bookingTextLabel.text = booking.map(String.init) ?? "Pick a booking"
         view.addSubview(bookingTextLabel)
+    }
+    
+    @objc func editBooking() {
+        let statusController = BookingStatusViewController()
+        present(statusController, animated: true)
     }
     
 }
