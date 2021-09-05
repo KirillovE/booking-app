@@ -7,7 +7,7 @@
 //
 
 import RandomUserAPI
-import Foundation
+import PlistHandler
 
 struct BookingListInteractor {
     
@@ -17,15 +17,7 @@ struct BookingListInteractor {
     private let userLoader = Loader()
     
     private let bookingsCount: Int = {
-        guard
-            let path = Bundle.main.path(forResource: "Info", ofType: "plist"),
-            let info = NSDictionary(contentsOfFile: path) as? [String: AnyObject],
-            let count = info["BookingsCount"] as? Int
-        else {
-            assertionFailure("Unable to load bookings count from Info.plist")
-            return 0
-        }
-        return count
+        PlistHandler(plistName: "Info").getValueForKey("BookingsCount", using: .main) ?? 0
     }()
     
     func loadUsers() {

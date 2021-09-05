@@ -3,7 +3,7 @@ import XCTest
 
 final class PlistHandlerTests: XCTestCase {
     
-    private let handler = PlistHandler()
+    private let handler = PlistHandler(plistName: "Test")
     
     func testFailure() {
         let value: String? = handler.getValueForKey("some", using: .module)
