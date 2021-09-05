@@ -6,13 +6,14 @@
 //
 
 public struct User: Decodable {
-    let gender: Gender
-    let name: FullName
-    let email: String
-    let phone: String
-    let cell: String
     private let dob: DOB
-    var age: Int {
+    
+    public let gender: Gender
+    public let name: FullName
+    public let email: String
+    public let phone: String
+    public let cell: String
+    public var age: Int {
         dob.age
     }
 }

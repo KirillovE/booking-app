@@ -10,3 +10,14 @@ struct Booking {
     let user: User
     var status: Status = .waiting
 }
+
+extension Booking: CustomStringConvertible {
+    
+    var description: String {
+        """
+        Booking status: \(status)
+        Client – \(user)
+        """
+    }
+    
+}

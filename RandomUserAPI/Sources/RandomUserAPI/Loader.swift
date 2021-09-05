@@ -25,7 +25,7 @@ public extension Loader {
         }
         
         let task = networkHandler.loadDataFromURL(url, withType: Results.self) { resultsResponse in
-            let usersResponse = resultsResponse.map(\.users)
+            let usersResponse = resultsResponse.map(\.results)
             completion(usersResponse)
         }
         task.resume()

@@ -24,6 +24,11 @@ private extension HomeViewController {
     func initialSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Home"
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
     }
     
 }

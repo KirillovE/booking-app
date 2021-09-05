@@ -6,7 +6,7 @@
 //
 
 public struct FullName: Decodable {
-    let title: String
-    let first: String
-    let last: String
+    public let title: String
+    public let first: String
+    public let last: String
 }

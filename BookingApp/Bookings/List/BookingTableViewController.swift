@@ -11,6 +11,22 @@ import UIKit
 final class BookingTableViewController: UITableViewController {
     
     private var bookings: [Booking] = []
+    private var interactor = BookingListInteractor()
+    
+    init() {
+        if #available(iOS 13.0, *) {
+            super.init(style: .insetGrouped)
+        } else {
+            super.init(style: .grouped)
+        }
+        interactor.bookingsRepresenter = self
+        interactor.errorRepresenter = self
+        interactor.loadUsers()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +65,31 @@ extension BookingTableViewController {
     
 }
 
+// MARK: - BookingListRepresenter
+
+extension BookingTableViewController: BookingListRepresenter {
+    
+    func representBookings(_ bookings: [Booking]) {
+        print(bookings)
+    }
+    
+}
+
+// MARK: - ErrorRepresenter
+
+extension BookingTableViewController: ErrorRepresenter {
+    
+    func representErrorText(_ error: String) {
+        print(error)
+    }
+    
+}
+
+// MARK: - Private methods
+
 private extension BookingTableViewController {
     
     func initialSetup() {
-        if #available(iOS 13.0, *) {
-            tableView = UITableView(frame: .zero, style: .insetGrouped)
-        }
         view.backgroundColor = .blue
         title = "Booking"
         navigationController?.navigationBar.prefersLargeTitles = true

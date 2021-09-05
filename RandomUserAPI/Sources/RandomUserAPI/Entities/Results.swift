@@ -6,5 +6,5 @@
 //
 
 struct Results: Decodable {
-    let users: [User]
+    let results: [User]
 }

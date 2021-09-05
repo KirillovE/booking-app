@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A07D7F326E4F1BC00E3F0BE /* ErrorRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */; };
 		7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */; };
 		7A27E81026E4ECF60051E187 /* BookingListRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */; };
 		7A27E81426E4EDD00051E187 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A27E81326E4EDD00051E187 /* Status.swift */; };
+		7A27E81A26E4F0350051E187 /* RandomUserAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A27E81926E4F0350051E187 /* RandomUserAPI */; };
 		7A8BFF13212C6CBD002D27B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF12212C6CBD002D27B0 /* AppDelegate.swift */; };
 		7A8BFF15212C6CBD002D27B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF14212C6CBD002D27B0 /* HomeViewController.swift */; };
 		7A8BFF1A212C6CBF002D27B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8BFF19212C6CBF002D27B0 /* Assets.xcassets */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRepresenter.swift; sourceTree = "<group>"; };
 		7A27E80B26E4D08B0051E187 /* RandomUserAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RandomUserAPI; sourceTree = "<group>"; };
 		7A27E80D26E4ECCF0051E187 /* BookingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListInteractor.swift; sourceTree = "<group>"; };
 		7A27E80F26E4ECF60051E187 /* BookingListRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingListRepresenter.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A27E81A26E4F0350051E187 /* RandomUserAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +133,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		7A27E81626E4EF3A0051E187 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A8BFF06212C6CBD002D27B0 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +148,7 @@
 				7A8BFF26212C6CBF002D27B0 /* BookingAppTests */,
 				7A8BFF31212C6CBF002D27B0 /* BookingAppUITests */,
 				7A8BFF10212C6CBD002D27B0 /* Products */,
+				7A27E81626E4EF3A0051E187 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				7A27E81326E4EDD00051E187 /* Status.swift */,
+				7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +247,9 @@
 			dependencies = (
 			);
 			name = BookingApp;
+			packageProductDependencies = (
+				7A27E81926E4F0350051E187 /* RandomUserAPI */,
+			);
 			productName = BookingApp;
 			productReference = 7A8BFF0F212C6CBD002D27B0 /* BookingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -362,6 +378,7 @@
 				7A8BFF46212C6E97002D27B0 /* SettingsViewController.swift in Sources */,
 				7A27E80E26E4ECCF0051E187 /* BookingListInteractor.swift in Sources */,
 				7A27E81426E4EDD00051E187 /* Status.swift in Sources */,
+				7A07D7F326E4F1BC00E3F0BE /* ErrorRepresenter.swift in Sources */,
 				7A8BFF4A212C756D002D27B0 /* Booking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +702,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A27E81926E4F0350051E187 /* RandomUserAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RandomUserAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A8BFF07212C6CBD002D27B0 /* Project object */;
 }

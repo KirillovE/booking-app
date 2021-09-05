@@ -45,6 +45,11 @@ final class EntitiesDecodingTests: XCTestCase {
         XCTAssertEqual(response?.name.title, "Mr")
     }
     
+    func testResults() {
+        let response = getDecodedResponse(ofType: Results.self, from: .results)
+        XCTAssertEqual(response?.results.count, 1)
+    }
+    
 }
 
 private extension EntitiesDecodingTests {
