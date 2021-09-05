@@ -47,6 +47,7 @@ extension BookingTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let booking = self.bookings[indexPath.row]
         cell.textLabel?.text = "\(booking.user.shortName) — \(booking.status)"
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
