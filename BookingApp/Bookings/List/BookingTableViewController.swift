@@ -11,7 +11,12 @@ import UIKit
 final class BookingTableViewController: UITableViewController {
     
     private var bookings = [Booking]()
-    private var interactor = BookingListInteractor()
+    private lazy var interactor: BookingListInteractor = {
+        var interactor = BookingListInteractor()
+        interactor.bookingsRepresenter = self
+        interactor.errorRepresenter = self
+        return interactor
+    }()
     
     init() {
         if #available(iOS 13.0, *) {
@@ -19,8 +24,6 @@ final class BookingTableViewController: UITableViewController {
         } else {
             super.init(style: .grouped)
         }
-        interactor.bookingsRepresenter = self
-        interactor.errorRepresenter = self
         interactor.loadUsers()
     }
     
