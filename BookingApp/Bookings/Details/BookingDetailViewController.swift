@@ -10,6 +10,7 @@ import UIKit
 
 final class BookingDetailViewController: UIViewController {
     
+    weak var statusObserver: StatusObserver?
     private var bookingTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
     private var booking: Booking? {
         didSet {
@@ -39,6 +40,7 @@ extension BookingDetailViewController: StatusObserver {
     
     func handleNewStatus(_ newStatus: Status) {
         booking?.status = newStatus
+        statusObserver?.handleNewStatus(newStatus)
     }
     
 }

@@ -127,7 +127,6 @@
 			children = (
 				7A8BFF4F212C7ADC002D27B0 /* BookingStatusViewController.swift */,
 				7A8BFF50212C7ADC002D27B0 /* BookingStatusViewController.xib */,
-				7A07D81B26E5386C00E3F0BE /* StatusObserver.swift */,
 			);
 			path = StatusHandling;
 			sourceTree = "<group>";
@@ -237,6 +236,7 @@
 				7A27E81326E4EDD00051E187 /* Status.swift */,
 				7A07D7F226E4F1BC00E3F0BE /* ErrorRepresenter.swift */,
 				7A07D7F926E51DF400E3F0BE /* NotificationName.swift */,
+				7A07D81B26E5386C00E3F0BE /* StatusObserver.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

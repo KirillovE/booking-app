@@ -64,6 +64,7 @@ extension BookingTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let booking = bookings[indexPath.row]
         let detailViewController = BookingDetailViewController(booking: booking)
+        detailViewController.statusObserver = self
         let detailNavigationController = UINavigationController(rootViewController: detailViewController)
         splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
     }
@@ -97,6 +98,30 @@ extension BookingTableViewController: ErrorRepresenter {
             alertController.addAction(UIAlertAction(title: "Close", style: .cancel))
             self.present(alertController, animated: true)
         }
+    }
+    
+}
+
+// MARK: - StatusObserver
+
+extension BookingTableViewController: StatusObserver {
+    
+    func handleNewStatus(_ newStatus: Status) {
+        guard let selectedCellIndex = tableView.indexPathForSelectedRow else { return }
+        bookings[selectedCellIndex.row].status = newStatus
+        tableView.reloadRows(at: [selectedCellIndex], with: .automatic)
+        if selectedCellIndex.row == 0 {
+            notifyOfTopStatusChange(newStatus)
+        }
+    }
+    
+    private func notifyOfTopStatusChange(_ newStatus: Status) {
+        let info = ["topStatus": newStatus]
+        NotificationCenter.default.post(
+            name: NotificationName.bookingsUpdated.name,
+            object: nil,
+            userInfo: info
+        )
     }
     
 }
