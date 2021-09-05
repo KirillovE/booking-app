@@ -10,11 +10,7 @@ import XCTest
 
 final class EntitiesDecodingTests: XCTestCase {
     
-    private let decoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }()
+    private let decoder = JSONDecoder()
     
     func testGenderMale() {
         let response = getDecodedResponse(ofType: Gender.self, from: .genderMale)
