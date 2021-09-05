@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A27E80B26E4D08B0051E187 /* RandomUserAPI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RandomUserAPI; sourceTree = "<group>"; };
 		7A8BFF0F212C6CBD002D27B0 /* BookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8BFF12212C6CBD002D27B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A8BFF14212C6CBD002D27B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		7A8BFF06212C6CBD002D27B0 = {
 			isa = PBXGroup;
 			children = (
+				7A27E80B26E4D08B0051E187 /* RandomUserAPI */,
 				7A8BFF11212C6CBD002D27B0 /* BookingApp */,
 				7A8BFF26212C6CBF002D27B0 /* BookingAppTests */,
 				7A8BFF31212C6CBF002D27B0 /* BookingAppUITests */,
