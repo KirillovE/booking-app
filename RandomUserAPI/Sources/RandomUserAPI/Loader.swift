@@ -20,7 +20,9 @@ public extension Loader {
     
     func loadUsers(usersCount: Int, completion: @escaping UsersResponse) {
         guard let url = formURL(usersCount: usersCount) else {
-            completion(.failure("Failed to form request"))
+            let errorString = NSLocalizedString("form request failure", comment: "")
+            let error = TextualError(description: errorString)
+            completion(.failure(error))
             return
         }
         

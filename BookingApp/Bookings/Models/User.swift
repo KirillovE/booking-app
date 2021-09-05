@@ -30,10 +30,18 @@ struct User {
 
 extension User {
     
-    enum Gender {
+    enum Gender: String {
         case male, female
     }
 
+}
+
+extension User.Gender: CustomStringConvertible {
+    
+    var description: String {
+        NSLocalizedString(rawValue, comment: "")
+    }
+    
 }
 
 extension User {

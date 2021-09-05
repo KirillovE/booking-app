@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "RandomUserAPI",
+    defaultLocalization: "en",
     products: [
         .library(
             name: "RandomUserAPI",

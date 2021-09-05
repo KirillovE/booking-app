@@ -1,0 +1,4 @@
+"male" = "homme";
+"female" = "femme";
+"form request failure" = "Échec de la demande de formulaire";
+"Invalid response format" = "Format de réponse non valide";

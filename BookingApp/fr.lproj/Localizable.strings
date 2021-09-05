@@ -12,6 +12,8 @@
 "first name" = "prénom";
 "last name" = "nom";
 "gender" = "sexe";
+"male" = "homme";
+"female" = "femme";
 "email address" = "courriel";
 "phone number" = "numéro de téléphone";
 "age" = "âge";

@@ -42,7 +42,9 @@ struct NetworkHandler {
                 mimeType == "application/json",
                 let loadedData = data
             else {
-                completion(.failure("Invalid response format"))
+                let errorString = NSLocalizedString("Invalid response format", comment: "")
+                let error = TextualError(description: errorString)
+                completion(.failure(error))
                 return
             }
             
