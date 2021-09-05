@@ -11,6 +11,7 @@ import UIKit
 final class BookingDetailViewController: UIViewController {
     
     private var booking: Booking?
+    private var bookingTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
     
     init(booking: Booking?) {
         self.booking = booking
@@ -52,11 +53,11 @@ private extension BookingDetailViewController {
     }
     
     func setLabel() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        label.center = view.center
-        label.textColor = booking?.status.color
-        label.text = booking?.user.firstName ?? "Pick a booking"
-        view.addSubview(label)
+        bookingTextLabel.numberOfLines = 0
+        bookingTextLabel.center = view.center
+        bookingTextLabel.textColor = booking?.status.color
+        bookingTextLabel.text = booking.map(String.init) ?? "Pick a booking"
+        view.addSubview(bookingTextLabel)
     }
     
 }
