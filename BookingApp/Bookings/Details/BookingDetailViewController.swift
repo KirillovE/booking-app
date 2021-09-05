@@ -62,7 +62,7 @@ private extension BookingDetailViewController {
     }
     
     func setNavigationItems() {
-        navigationItem.title = "Booking"
+        navigationItem.title = NSLocalizedString("Booking", comment: "")
         navigationController?.navigationBar.prefersLargeTitles = true
         
         if booking != nil {
@@ -89,7 +89,7 @@ private extension BookingDetailViewController {
     
     func setLabelText() {
         bookingTextLabel.textColor = booking?.status.color
-        bookingTextLabel.text = booking.map(String.init) ?? "Pick a booking"
+        bookingTextLabel.text = booking.map(String.init) ?? NSLocalizedString("Pick a booking", comment: "")
     }
     
     @objc func editBooking() {

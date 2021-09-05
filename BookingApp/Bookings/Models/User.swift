@@ -7,6 +7,7 @@
 //
 
 import RandomUserAPI
+import Foundation.NSString
 
 struct User {
     let title: String
@@ -56,12 +57,12 @@ extension User: CustomStringConvertible {
     var description: String {
         """
         \(fullName):
-            first name: \(firstName)
-            last name: \(lastName)
-            gender: \(gender)
-            email address: \(email)
-            phone number: \(phone)
-            age: \(age)
+            \(NSLocalizedString("first name", comment: "")): \(firstName)
+            \(NSLocalizedString("last name", comment: "")): \(lastName)
+            \(NSLocalizedString("gender", comment: "")): \(gender)
+            \(NSLocalizedString("email address", comment: "")): \(email)
+            \(NSLocalizedString("phone number", comment: "")): \(phone)
+            \(NSLocalizedString("age", comment: "")): \(age)
         """
     }
     

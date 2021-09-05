@@ -57,7 +57,7 @@ private extension AppDelegate {
     func getConfiguredHomeController() -> UIViewController {
         let homeController = HomeViewController()
         homeController.tabBarItem = UITabBarItem(
-            title: "Home",
+            title: NSLocalizedString("Home", comment: ""),
             image: UIImage(named: "home"),
             tag: 0
         )
@@ -68,7 +68,7 @@ private extension AppDelegate {
         let splitController = UISplitViewController()
         splitController.delegate = self
         splitController.tabBarItem = .init(
-            title: "Bookings",
+            title: NSLocalizedString("Bookings", comment: ""),
             image: UIImage(named: "book"),
             tag: 1
         )
@@ -83,7 +83,7 @@ private extension AppDelegate {
     func getConfiguredSettingsController() -> UIViewController {
         let settingsController = SettingsViewController()
         settingsController.tabBarItem = UITabBarItem(
-            title: "Settings",
+            title: NSLocalizedString("Settings", comment: ""),
             image: UIImage(named: "settings"),
             tag: 2
         )

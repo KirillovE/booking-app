@@ -30,7 +30,7 @@ extension BookingStatusViewController: UIPickerViewDelegate {
         titleForRow row: Int,
         forComponent component: Int
     ) -> String? {
-        Status.allCases[row].rawValue
+        String(describing: Status.allCases[row])
     }
     
     func pickerView(
@@ -93,7 +93,7 @@ private extension BookingStatusViewController {
             action: #selector(saveAndClose)
         )
         
-        navigationItem.title = "Change status"
+        navigationItem.title = NSLocalizedString("Change status", comment: "")
     }
     
     @objc func closeController() {

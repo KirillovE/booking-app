@@ -91,11 +91,12 @@ extension BookingTableViewController: ErrorRepresenter {
     func representErrorText(_ error: String) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(
-                title: "Error",
+                title: NSLocalizedString("Error", comment: ""),
                 message: error,
                 preferredStyle: .alert
             )
-            alertController.addAction(UIAlertAction(title: "Close", style: .cancel))
+            let closeTitle = NSLocalizedString("Close", comment: "")
+            alertController.addAction(UIAlertAction(title: closeTitle, style: .cancel))
             self.present(alertController, animated: true)
         }
     }
@@ -131,7 +132,7 @@ extension BookingTableViewController: StatusObserver {
 private extension BookingTableViewController {
     
     func initialSetup() {
-        title = "Booking"
+        title = NSLocalizedString("Booking", comment: "")
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }

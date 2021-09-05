@@ -25,3 +25,11 @@ extension Status {
     }
     
 }
+
+extension Status: CustomStringConvertible {
+    
+    var description: String {
+        NSLocalizedString(rawValue, comment: "")
+    }
+    
+}

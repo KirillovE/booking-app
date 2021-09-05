@@ -23,7 +23,7 @@ private extension SettingsViewController {
     
     func initialSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Settings"
+        title = NSLocalizedString("Settings", comment: "")
         
         if #available(iOS 13.0, *) {
             view.backgroundColor = .systemBackground

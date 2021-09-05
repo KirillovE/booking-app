@@ -6,6 +6,8 @@
 //  Copyright © 2018 zenchef. All rights reserved.
 //
 
+import Foundation.NSString
+
 struct Booking {
     let user: User
     var status: Status = .waiting
@@ -15,8 +17,8 @@ extension Booking: CustomStringConvertible {
     
     var description: String {
         """
-        Booking status: \(status)
-        Client – \(user)
+        \(NSLocalizedString("Booking status", comment: "")): \(status)
+        \(NSLocalizedString("Client", comment: "")) – \(user)
         """
     }
     
