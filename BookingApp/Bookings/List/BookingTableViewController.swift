@@ -10,7 +10,7 @@ import UIKit
 
 final class BookingTableViewController: UITableViewController {
     
-    private var bookings: [Booking] = []
+    private var bookings = [Booking]()
     private var interactor = BookingListInteractor()
     
     init() {
@@ -80,7 +80,15 @@ extension BookingTableViewController: BookingListRepresenter {
 extension BookingTableViewController: ErrorRepresenter {
     
     func representErrorText(_ error: String) {
-        print(error)
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(
+                title: "Error",
+                message: error,
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel))
+            self.present(alertController, animated: true)
+        }
     }
     
 }
